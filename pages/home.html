@@ -1,0 +1,162 @@
+
+    <%- include('partials/header.html') %>
+
+        <!--<section class="noticia-destaque">
+            <div class="center">
+                <div class="img-destaque">
+                    <div class="overlay-destaque"></div>
+                    <div class="title-destaque-descricao">
+                        feito em off o link aqui e adicionado nos estilos
+                        <a href="/slug-aqui"><h2>Quer Fugir das Praias de Verão?</h2></a>
+                        <p>Donec consectetur libero eget bibendum ullamcorper. Quisque auctor nulla eu enim ultrices laoreet. Na..</p>
+                    </div>
+                    <img src="/public/images/landscape.jpg" />
+                </div>
+            </div>
+        </section>-->
+
+       <!-- <section class="outras-noticias">
+            <div class="title-outras-noticia ">
+                <h2>Últimas Notícias</h2>
+                <br><br>
+                <div class="center">
+                    <div class="ultimas">
+                        <div class="box-ultima-single">
+                            <img src="/public/images/noticia.png" />
+                            <div class="conteudo-noticia-single">
+                            <h3>Natureza e Geral</h3>
+                            <h2>Como Encarar o Surf em Floripa</h2>
+                            <p>A água gelada e o vento pode acabar com a sua felicidade de ir para a água. Cientistas afirmam que a chance de hipotermia é real e você precisa se cuidar. Veja como.</p>
+                            <a href="/encarar-o-surf">Saiba mais</a>
+                        </div>
+                        </div>
+                        <div class="box-ultima-single">
+                            <img src="/public/images/noticia.png" />
+                            <div class="conteudo-noticia-single">
+                            <h3>Natureza e Geral</h3>
+                            <h2>Como Encarar o Surf em Floripa</h2>
+                            <p>A água gelada e o vento pode acabar com a sua felicidade de ir para a água. Cientistas afirmam que a chance de hipotermia é real e você precisa se cuidar. Veja como.</p>
+                            <a href="/encarar-o-surf">Saiba mais</a>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="mais-lidas">
+                        <h3>Mais Lidas</h3>
+                        <div class="mais-lidas-noticias">
+                            <div class="mais-lida-noticia-single">
+                                <img src="/public/images/natureza_small.png" />
+                                <div class="texto-mais-lida-single">
+                                    <h4>Natureza</h4>
+                                    <p>A importância da floresta do ártico para a biodiversidade mundial. Qual o impacto o degelo na fauna e flora?</p>
+                                    <a href="/encarar-o-surf">Saiba mais</a>
+                                </div>
+                            </div>
+                            <div class="mais-lida-noticia-single">
+                                <img src="/public/images/natureza_small.png" />
+                                <div class="texto-mais-lida-single">
+                                    <h4>Natureza</h4>
+                                    <p>A importância da floresta do ártico para a biodiversidade mundial. Qual o impacto o degelo na fauna e flora?</p>
+                                    <a href="/encarar-o-surf">Saiba mais</a>
+                                </div>
+                            </div>
+                            <div class="mais-lida-noticia-single">
+                                <img src="/public/images/natureza_small.png" />
+                                <div class="texto-mais-lida-single">
+                                    <h4>Natureza</h4>
+                                    <p>A importância da floresta do ártico para a biodiversidade mundial. Qual o impacto o degelo na fauna e flora?</p>
+                                    <a href="/encarar-o-surf">Saiba mais</a>
+                                </div>
+                            </div>
+                            <div class="mais-lida-noticia-single">
+                                <img src="/public/images/natureza_small.png" />
+                                <div class="texto-mais-lida-single">
+                                    <h4>Natureza</h4>
+                                    <p>A importância da floresta do ártico para a biodiversidade mundial. Qual o impacto o degelo na fauna e flora?</p>
+                                    <a href="/encarar-o-surf">Saiba mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+
+        <div class="py-5 bg-light border-bottom mb-4">
+            <div class="container">
+                <div class="text-center my-5">
+                    <h1 class="fw-bolder">Bem-Vindo ao Portal Developer!</h1>
+                    <p class="lead mb-0">Aqui voce vai ler e conhercer as tecnologias e novidades do momentos</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <!-- Blog entries-->
+                <div class="col-lg-8">
+                    <!-- Featured blog post-->
+                    <div class="card mb-4">
+                        <a href="<%= posts[0].slug %>"><img class="card-img-top" src="<%= posts[0].imagem %>" alt="..." /></a>
+                        <div class="card-body">
+                            <div class="small text-primary"><%= posts[0].categoria %></div>
+                            <h2 class="card-title"><%= posts[0].titulo %></h2>
+                            <p class="card-text"><%- posts[0].descricaoCurta %>...</p>
+                            <a class="btn btn-dark" href="<%= posts[0].slug %>">Saiba mais →</a>
+                        </div>
+                    </div>
+                    <!-- Nested row for non-featured blog posts-->
+                    <div class="row">
+                        <% for(let i = 1; i < posts.length; i++) { %>
+                        <div class="col-lg-6">
+                            <!-- Blog post-->
+                            <div class="card mb-4">
+                                <a href="<%= posts[i].slug %>"><img class="card-img-top" src="<%= posts[i].imagem %>" alt="..." /></a>
+                                <div class="card-body">
+                                    <div class="small text-primary"><%= posts[i].categoria %></div>
+                                    <h2 class="card-title h4"><%= posts[i].titulo %></h2>
+                                    <p class="card-text"><%- posts[i].descricaoCurta %>...</p>
+                                    <a class="btn btn-dark" href="<%= posts[i].slug %>">Saiba mais →</a>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+
+                    </div>
+                </div>
+                <!-- Side widgets-->
+                <div class="col-lg-4">
+
+                    <!-- Side widget-->
+                    <div class="card mb-4">
+                        <div class="card-header bg-dark text-white text-center">Mais Lidas</div>
+                            <div class="card-body">
+                                <% for(let i = 0; i < postsTop.length; i++) { %>
+                                <div class="card">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <div class="p-2">
+                                                <img alt="..." src="<%= postsTop[i].imagem %>" class="card-img">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                 <div class="small text-muted"><%= postsTop[i].categoria %> <span style="font-size: 12px;font-weight: bold;">(<%= postsTop[i].views %> views)</span></div>
+                                                 
+                                            <!-- Title -->
+                                            <h3 class="h4"><%= postsTop[i].titulo %></h3>
+                                            <!-- Subtitle -->
+                                            <p class="mt-4 mb-2"><%- postsTop[i].descricaoCurta %></p>
+                                            <a href="<%= postsTop[i].slug %>" class="btn btn-sm btn-dark">Saiba mais</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include('partials/footer.html') %>
+
+    </body>
+</html>
